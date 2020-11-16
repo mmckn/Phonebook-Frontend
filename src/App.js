@@ -54,13 +54,14 @@ const App = () => {
         //stops the whole page being reloaded on form submission
         event.preventDefault()
         const person = persons.find(number => number.name === newName)
+        
         if (person) {
 
             const result = window.confirm(` Update ${newName}'s number? `)
 
             if (result) {
                 //create a new person with old persons details and new number.
-                const updatedPerson = { id:person.id, name: person.name, phoneNumber: newNumber }
+                const updatedPerson = { id:person.id, name: person.name, number: newNumber }
                 personsService.update(person.id, updatedPerson)
 
                     //make a new list of persons replacing the old person with the update version
