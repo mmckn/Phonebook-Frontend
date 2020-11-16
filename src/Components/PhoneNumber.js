@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const PhoneNumber = ({ name, phoneNumber, remove, id }) => {
     return (
         
-       <li> {name} {phoneNumber} <button onClick={() => remove(id)}>delete</button></li>
+       <li> <p>{name} </p>
+       <p>{phoneNumber}</p>
+        <button onClick={() => remove(id)}>delete</button></li>
                   
         
     )

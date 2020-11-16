@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-
+import React from 'react'
+import '../../src/styles/Form.css'
 const Form = ({ newName, newNumber, addName, handleNumberChange, handleNameChange }) => {
 
 
@@ -7,30 +7,30 @@ const Form = ({ newName, newNumber, addName, handleNumberChange, handleNameChang
 
 
     return (
-        <div>
+        <div className ="form">
+
+        <h2>Add New Number</h2>
             <form  onSubmit={addName}>
-            <ul style={{flex:'flex-outer'}}>
+            <ul>
                 
                     <li>
                     <label forms="name">Name:</label>
-         <input style={{width:'50%'}}
+         <input 
                             value={newName}
                             //when user types call handleNameChange to update state
                             onChange={handleNameChange}
                         />
                     </li>
                     <li>
-                    <label forms="phonenumber">Phonenumber:</label>
+                    <label forms="phonenumber">Phone number:</label>
          <input
                             value={newNumber}
                             //when user types calle handleNumberChange to update state
                             onChange={handleNumberChange}
                         />
+                        <button type="submit"> Add contact</button>
                     </li>
-                
-                <li>
-                    <button type="submit"> add </button>
-                </li>
+              
                 </ul>
             </form>
 

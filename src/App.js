@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import PhoneNumber from './Components/PhoneNumber'
 import Form from './Components/Form'
 import Search from './Components/Search'
-import Axios from 'axios'
 import personsService from './services/personsService'
 import Notification from './Components/Notification'
+import './styles/App.css'
 
 const App = () => {
-
     const [persons, setPersons] = useState([])
     const [newName, setNewName] = useState('')
     const [newNumber, setNewNumber] = useState('')
@@ -49,13 +47,13 @@ const App = () => {
             })
 
     }, [])
-
+   
 
 
     const addName = (event) => {
         //stops the whole page being reloaded on form submission
         event.preventDefault()
-        const person = persons.find(number => number.name == newName)
+        const person = persons.find(number => number.name === newName)
         if (person) {
 
             const result = window.confirm(` Update ${newName}'s number? `)
@@ -67,7 +65,7 @@ const App = () => {
 
                     //make a new list of persons replacing the old person with the update version
                     .then(updatedPerson => {
-                        setPersons(persons.map(person => person.id == updatedPerson.id ?
+                        setPersons(persons.map(person => person.id === updatedPerson.id ?
                             updatedPerson : person
                         ))
                       
@@ -155,8 +153,8 @@ const App = () => {
 
     return (
 
-        <div style={{margin:'0-auto'}}>
-            <h2 >Phonebook</h2>
+        <div id="homeImg" style={{margin:'0-auto'}}>
+            <h1 className="title" >Phonebook</h1>
 
             <Notification message={errorMessage} styleType={errorStyle} />
             <Notification message={successMessage} styleType={successStyle} />
