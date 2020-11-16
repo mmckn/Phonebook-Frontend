@@ -2,10 +2,11 @@ import axios from 'axios'
 
 // This module handles methods for communicating with the server.
 
-const baseUrl = 'https://cryptic-fortress-05104.herokuapp.com/persons/api'
+const baseUrl = '/persons/api'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
+  
     return request.then(response => response.data)
 }
 
