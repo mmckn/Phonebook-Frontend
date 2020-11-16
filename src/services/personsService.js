@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // This module handles methods for communicating with the server.
 
-const baseUrl = '/api/persons'
+const baseUrl = '/api/persons/'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
